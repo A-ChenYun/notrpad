@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create_note</title>
+    <script>
+        function set_password_note() {
+            var password = prompt("make a password for your note");
+            if (password != null){
+                document.getElementById("pass1").value = password;
+            }else{
+                alert("you click [cancel]");
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="create_note.php" id="create_note_form">
+    <p>ADD NOTE</p><br/>
+    title:
+    <input type="text" name="title"><br/>
+    content:
+    <input type="text" name="content"><br/>
+
+    <!--选择后值为1-->
+    private:
+    <input type="radio" name="private"  onclick="set_password_note()" /><br>
+    <input type="hidden" id="pass1" name="note_pass">
+    not_private:
+    <input type="radio" name="not_private"  />
+    <br/>
+    <input type="submit" name="submit"></input>
+</form>
+</body>
+</html>
